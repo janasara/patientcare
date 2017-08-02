@@ -1,0 +1,326 @@
+body {
+  background: cornsilk;
+
+  font-family: sans-serif;
+}
+
+.lane {
+  display: inline-block;
+
+  margin: 1em;
+
+  background-color: #efefef;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+
+  min-width: 10em;
+  vertical-align: top;
+}
+
+.lanes {
+  display: flex;  
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.laneflex {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 1em; 
+  width:190px;    
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  min-width: 10em;  
+}
+
+
+.nlaneflex {
+  display: flex;
+  flex-direction: column; 
+    
+}
+
+.nlanenote {
+
+ margin: 0.25em;
+ border: 1px solid #ccc;
+ border-radius: 0.25em;
+ background-color:lightgoldenrodyellow;
+ height:40px;
+ text-align:center;
+ vertical-align: middle;
+
+ 
+}
+
+.mcontainer{
+  display: flex;  
+  flex-flow: column wrap; 
+  padding:0.10em;
+  
+ 
+} 
+
+.melement{
+  display: flex;  
+  flex-direction: column;
+  align-items: space-evenly;
+  flex-basis: auto;
+  padding:0.5em;
+  margin:2px;
+  border: 1px solid #ccc;
+   border-radius: 0.25em;
+  color: #efefef;
+  background-color:#002b49;
+
+}
+
+.bcontainer{
+  display: flex;  
+  flex-flow: column wrap;  
+  margin:1em;
+
+  min-width:250px;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+ 
+}
+.belement{
+  display: flex;  
+  flex-direction: row;
+  align-items: space-evenly;
+  flex-basis: auto;
+ 
+  min-width:200px;
+  margin:1em;
+  
+}
+
+.belementn{
+ /* margin: 0.25em;
+
+ border: 1px solid #ccc;
+ border-radius: 0.25em;
+ background-color:lightgoldenrodyellow;
+ */
+
+ width:100%;
+ text-align: left;
+}
+.belemente{
+   width:100%;
+  text-align: center;
+}
+
+
+.telement{
+  display: flex;  
+  flex-direction: row;
+  align-items: space-evenly;
+  flex-basis: auto;
+  min-width:200px;
+  margin:1em; 
+
+  
+  
+}
+
+.telementn{
+  width:260px;
+  text-align: left;  
+  vertical-align: middle;
+}
+
+.telementl{
+  text-align: left;
+  width:10%; 
+  min-width:100px; 
+  
+}
+
+.telemente{
+ 
+  text-align: right;
+   width:10%; 
+   min-width:100px; 
+   
+}
+.telementdt{
+  
+  width:260px;
+}
+.telementrl{
+  margin:1em;
+  text-align: left;
+  }
+
+.bbtn{
+  width:80px;
+  margin:1em;
+  padding: 1em;
+  text-align:left;
+  font-family: sans-serif;
+  font-size: 10px;
+}
+
+.ielement{
+  width:50%;
+  
+}
+
+.lane-header {
+  overflow: auto;
+
+  padding: 0.25em;
+  
+
+  color: #efefef;
+
+  background-color:#002b49;
+
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+}
+.form-header {
+  overflow: auto;
+
+  padding: 0.25em;
+  
+
+  color: #efefef;
+
+  background-color:dimgrey;
+
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+}
+
+
+.lane-name {
+  float: left;
+  
+}
+
+.lane-add-note {
+  float: left;
+
+  margin-right: 0.5em;
+}
+
+
+
+.lane-delete {
+  float: right;
+
+  margin-left: 0.5em;
+
+  visibility: hidden;
+}
+.lane-header:hover .lane-delete {
+  visibility: visible;
+}
+
+.add-lane, .lane-add-note button {
+  cursor: pointer;
+
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
+}
+
+.lane-delete button {
+  padding: 0;
+
+  cursor: pointer;
+
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+}
+
+.notes {
+  margin: 0.5em;
+  padding-left: 0;
+
+  max-width: 10em;
+  list-style: none;
+}
+
+.note {
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+
+  background-color: #fdfdfd;
+  box-shadow: 0 0 0.3em .03em rgba(0,0,0,.3);
+}
+.note:hover {
+  box-shadow: 0 0 0.3em .03em rgba(0,0,0,.7);
+
+  transition: .6s;
+}
+
+.note .value {
+  /* force to use inline-block so that it gets minimum height */
+  display: inline-block;
+}
+
+
+
+.note .delete {
+  float: right;
+
+  padding: 0;
+
+  background-color: #fdfdfd;
+  border: none;
+
+  cursor: pointer;
+
+  visibility: hidden;
+}
+.note:hover .delete {
+  visibility: visible;
+}
+
+
+
+
+
+#progressBar-container { 
+   width: 100%; 
+   height: 3px; 
+   position: fixed; 
+   z-index: 1000; 
+   top: 0; 
+   left: 0; 
+ } 
+ #progressBar-container #progressBar-bar { 
+   /* Change the bar color here */ 
+   background-color: green; 
+   width: 100vw; 
+   height: 5px; 
+   position: absolute; 
+   left: -100%; 
+   -webkit-transition: none; 
+   -moz-transition: none; 
+   -o-transition: none; 
+   transition: none; 
+ } 
+ #progressBar-container #progressBar-bar.none { 
+   left: -100%; 
+ } 
+ #progressBar-container #progressBar-bar.slow { 
+   left: -15%; 
+   -webkit-transition: 15s ease; 
+   -moz-transition: 15s ease; 
+   -o-transition: 15s ease; 
+   transition: 15s ease; 
+ } 
+ #progressBar-container #progressBar-bar.fast { 
+   left: 0; 
+   -webkit-transition: 1s ease; 
+   -moz-transition: 1s ease; 
+   -o-transition: 1s ease; 
+   transition: 1s ease; 
+} 
+
+
