@@ -8,3 +8,5 @@
 + Access the running app in a browser at <http://localhost:7000>
 
 [Install Node.js]: https://nodejs.org/en/download/
+
+Follow the readme file instructions to run microservice
