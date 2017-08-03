@@ -11,3 +11,81 @@ This application demonstrates a simple, reusable Node.js web application based o
 + Access the running app in a browser at <http://localhost:7000>
 
 [Install Node.js]: https://nodejs.org/en/download/
+
+2. Microservices Spring cloud NetFlix OSS 
+-patientcare-microservice folk repo has the code 
+Also, run the project in the below order. 
+1) Setup and start Discovery Server
+https://github.com/venkg/patientcare/tree/master/pc-discovery-server
+
+2) Setup and start Zuul Gateway Server 
+https://github.com/venkg/patientcare/tree/master/pc-gateway-service
+
+3) Setup and start Config Server
+https://github.com/venkg/patientcare/tree/master/pc-config-server
+
+4) Diagnostic centers Microservice integrated with Discovery Server
+https://github.com/venkg/patientcare/tree/master/patientcare
+
+5) Home Remedy Microservice integrated with Discovery Server
+https://github.com/venkg/patientcare/tree/master/homeremedy
+
+6) Diagnostic reports Load balancing Microservice, so that you will get service not available 
+https://github.com/venkg/patientcare/tree/master/diagnostic-load-balancing-service
+
+7) Diagnostic reports integrated with Discovery Server
+https://github.com/venkg/patientcare/tree/master/diagnostic 
+
+Spring Cloud Discovery Server:-
+------------------------------------
+http://start.spring.io/
+
+Group:- com.connarchdemo
+Artifact:- connarch-discovery-server
+Search for dependencies:- Eureka Server, DevTools, Actuator
+Include @EnableEurekaServer in Application, changes to application.properties
+
+http://localhost:8761/ Eureka server
+
+Spring Cloud Home Remedy Micro service:-
+-------------------------------------------
+http://start.spring.io/
+
+Group:- com.connarchdemo
+Artifact:- connarch-microservice
+Search for dependencies:- Eureka Discovery, DevTools, Actuator
+Include @EnableDiscoveryClient in Application, changes to application.properties
+
+http://localhost:9092/patientcare/v1/homeremedies // homeremedy to get all records
+
+
+Spring cloud gateway Service:-
+---------------------------------
+http://start.spring.io/
+
+Group:- com.connarchdemo
+Artifact:- connarch-gateway-service
+Search for dependencies:- Zuul, Eureka Discovery
+Include  @EnableZuulProxy @EnableDiscoveryClient  in Application, changes to application.properties
+
+http://localhost:9761/patientcare/v1/homeremedies // zuul proxy, this url will redirect to 9092
+
+
+Spring Cloud Ribbon:-
+-----------------------
+
+Diagnostic reports
+http://localhost:9091/patientcare/v1/diagnosticreports // instance 1 to get all diagnostic reports 
+
+http://localhost:8081/patientcare/v1/diagnosticreports // instance 2 to get all diagnostic reports
+
+http://localhost:9093/patientcare/v1/diagnosticreports/testservice // Returns the port it hits
+
+For multiple instances, include server.port: 7071 in Run configurations.
+
+http://localhost:9093/patientcare/v1/diagnosticreports?orderId=APL117613224321714 // Returns the data by hitting either 9091 or 8081
+
+
+Spring Cloud config server:-
+-----------------------------
+http://start.spring.io/
